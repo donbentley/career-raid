@@ -1,15 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Taskbar from './Taskbar';
+import Home from './Home';
+import AddCompany from './AddCompany';
+import LoginPage from './LoginPage';
 
 function App() {
   return (
-    <Router>
       <div className="App">
-        <Taskbar />
+        <Router>
+        <Taskbar/>
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/Add-Company' exact element={<AddCompany />} />
+          <Route path='/Login-Page' exact element={<LoginPage />} />
+        </Routes>
+      </Router>
+
       </div>
-    </Router>
   );
 }
 

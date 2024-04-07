@@ -1,0 +1,107 @@
+img {
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    position: center;
+    margin: 20px;
+    z-index: -1;
+}
+
+
+.loginPage-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: insert 0 0 0 1000px rgba(0,0,0,0.2);
+    object-fit: contain;
+}
+
+.loginPage-container input {
+    width: 300px;
+    color: #020202;
+    height: 40px;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 32px;
+    display: block;
+}
+
+.loginPage-container > h1 {
+    color: #020308;
+    font-size: 100px;
+    font-family: monospace;
+    margin-top: -100px;
+}
+
+.loginPage-container > p {
+    margin-top: 50px;
+    color: #0c0c0c;
+    font-family: monospace;
+    font-size: 32px;
+}
+
+.loginPage-btns {
+    margin-top: 32px;
+}
+
+.loginPage-btns .btn {
+    margin: 6px;
+}
+
+.btn {
+  width: auto;
+  background-color: rgb(121, 120, 120); 
+  color: black; 
+  border: 2px solid black; 
+  transition: color 0.5s; 
+}
+
+@media screen and (max-width: 960px) {
+    .loginPage-container > h1 {
+      font-size: 70px;
+      margin-top: -150px;
+    }
+
+    .loginPage-container > p {
+      font-size: 30px;
+    }
+  
+    .btn-mobile {
+      display: block;
+      text-decoration: none;
+    }
+    .btn {
+      width: auto;
+      background-color: rgb(121, 120, 120); 
+      color: black; 
+      border: 2px solid black; 
+      transition: color 0.5s; 
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .loginPage-container > h1 {
+      font-size: 50px;
+      margin-top: -100px;
+    }
+  
+    .loginPage-container > p {
+      font-size: 30px;
+    }
+  
+    .btn-mobile {
+      display: block;
+      text-decoration: none;
+    }
+  
+    .btn {
+      width: auto;
+      background-color: rgb(121, 120, 120); 
+      color: black; 
+      border: 2px solid black; 
+      transition: color 0.5s; 
+    }
+  }

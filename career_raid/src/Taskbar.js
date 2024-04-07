@@ -38,13 +38,13 @@ function Taskbar() {
                 </div>
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     <li className='nav-item'>
-                        <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                                About us
+                        <Link to="/Add-Company" className="nav-links" onClick={closeMobileMenu}>
+                                Add Company
                         </Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                            Events
+                        <Link to="/Login-Page" className="nav-links" onClick={closeMobileMenu}>
+                            Login
                         </Link>
                     </li>
                     
