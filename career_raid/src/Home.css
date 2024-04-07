@@ -1,12 +1,13 @@
 .Home {
     overflow: hidden;
+    z-index: 9;
 
 }
 .background {
-    background: url("./companies.png") repeat;
+    background: url("./companies2-removebg.png") repeat-x;
 
     margin:0;
-    height: 700px;
+    height: 581px;
     width: 5076px;
     animation: slide 60s linear infinite;
 
