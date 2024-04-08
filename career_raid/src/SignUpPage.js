@@ -27,7 +27,7 @@ const SignUpPage = () => {
             <form onSubmit={handleSubmit}>
                 <div className="signup-info">
                     <input
-                        type="email"id="email"name="email" placeholder='Email' value={formData.email} onChange={handleChange}
+                        type="username"id="username"name="username" placeholder='Username' value={formData.email} onChange={handleChange}
                     />
                 </div>
                 <div className="signup-info">
@@ -37,7 +37,7 @@ const SignUpPage = () => {
                 </div>
                 <button type="submit">Sign Up</button>
                 <div className='signIn'>
-                    <p>Already have an account? <a href="#">Sign In</a></p>
+                    <p>Already have an account? <a href="#">Log In</a></p>
                     </div>
             </form>
         </div>

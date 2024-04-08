@@ -4,13 +4,15 @@ import './App.css';
 import Taskbar from './Taskbar';
 import SignUpPage from './SignUpPage';
 import RaidMeter from './RaidMeter';
+import LoginPage from './LoginPage';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Taskbar />
-        <RaidMeter />
+        <LoginPage />
+        <SignUpPage />
       </div>
     </Router>
   );
