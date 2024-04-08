@@ -11,7 +11,7 @@ import {
 
 const chartData = {
     labels: ['accepted', 'rejected', 'in-progress'],
-    data: [2, 3, 2],
+    data: [1, 1, 1],
 };
 
 ChartJS.register(

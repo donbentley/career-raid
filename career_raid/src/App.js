@@ -5,14 +5,15 @@ import Taskbar from './Taskbar';
 import SignUpPage from './SignUpPage';
 import RaidMeter from './RaidMeter';
 import LoginPage from './LoginPage';
+import CardGrid from './CardGrid';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Taskbar />
-        <LoginPage />
-        <SignUpPage />
+        <RaidMeter />
+        <CardGrid />
       </div>
     </Router>
   );
