@@ -3,7 +3,7 @@
 
 }
 .background {
-    background: url("./images/companies.png") repeat;
+    background: url("./images/companies.png") ;
 
     margin:0;
     height: 700px;

@@ -5,6 +5,7 @@ import Taskbar from './Taskbar';
 import Home from './Home';
 import AddCompany from './AddCompany';
 import LoginPage from './LoginPage';
+import SignUpPage from './SignUpPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' exact element={<Home />} />
           <Route path='/Add-Company' exact element={<AddCompany />} />
           <Route path='/Login-Page' exact element={<LoginPage />} />
+          <Route path='/Signup-Page' exact element={<SignUpPage />} />
         </Routes>
       </Router>
 

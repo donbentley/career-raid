@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark} from '@fortawesome/free-solid-svg-icons';
 import './Home.css'
 import Button from "./Button";
 
@@ -18,10 +16,10 @@ function Home () {
         </div>
 
         <Link to="/Login-Page">
-        <Button className="button">Sign In</Button>
+        <button className="button">Sign In</button>
       </Link>
-      <Link to="/Login-Page">
-        <Button className="button">Sign Up</Button>
+      <Link to="/Signup-Page">
+        <button className="button">Sign Up</button>
       </Link>
     </div>
     )

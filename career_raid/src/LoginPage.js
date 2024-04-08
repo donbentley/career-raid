@@ -1,17 +1,24 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import './LoginPage.css';
+
 
 
 function LoginPage() {
     const [userName, setUserName] = React.useState("");
     const [password, setPassword] = React.useState("");
+    const navigate = useNavigate();
 
     const handleInputChange = (event) => {
         setUserName(event.target.value);
     }
     const handlePassword = (event) => {
         setPassword(event.target.value);
+    }
+
+    const handleLogin = () => {
+        navigate('/Add-Company');
     }
 
     return(
@@ -33,6 +40,7 @@ function LoginPage() {
                     className='btns'
                     buttonStyle='btn--outline'
                     buttonSize='btn--large'
+                    onClick = {handleLogin}
                 >
                    LOGIN
                 </Button>
