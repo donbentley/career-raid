@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import Card from './Card';
+//import Card from './Card';
 import Button from './Button';
 import './AddCompany.css';
 import { useNavigate } from 'react-router-dom';
@@ -11,23 +11,23 @@ const AddCompany = (props) => {
   const [entererdLogo, setentererdLogo] = useState('');
   const [entererdStatus, setentererdStatus] = useState('');
 
-  const usernameChangeHandler = (event) => {
+  const companyChangeHandler = (event) => {
     setEntererdCompany(event.target.value);
   };
 
-  const ageChangeHandler = (event) => {
+  const positionChangeHandler = (event) => {
     setentererdPosition(event.target.value);
   };
 
-  const imgChangeHandler = (event) => {
+  const logoChangeHandler = (event) => {
     setentererdLogo(event.target.value);
   };
 
-  const majorChangeHandler = (event) => {
+  const statusChangeHandler = (event) => {
     setentererdStatus(event.target.value);
   };
 
-  const addUserHandler = (event) => {
+  const addJobHandler = (event) => {
     event.preventDefault(); 
     
     if (entererdCompany.trim().length === 0) {
@@ -35,27 +35,48 @@ const AddCompany = (props) => {
     }
     
     const userData = {
-      name: entererdCompany,
-      age: entererdPosition,
-      img: entererdLogo,
-      major: entererdStatus
+      title: entererdCompany,
+      role: entererdPosition,
+      image: entererdLogo,
+      status: entererdStatus
     };
 
     
-    
+    props.onAddJob(userData);
     console.log(userData);
     
     setEntererdCompany('');
     setentererdPosition('');
     setentererdLogo('');
     setentererdStatus('');
+
+  
+    const {title, role, image} = userData;
+      console.log('Form Submitted:', userData);
+      fetch("http://localhost:8082/newJob",{
+          method:"POST",
+          crossDomain:true,
+          headers:{
+              "Content-Type":"application/json",
+          },
+          body:JSON.stringify({
+              title,
+              role,
+              image
+          }),
+      })
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data, "jobSubmitted");
+          });
   };
 
+  /** 
   const navigate = useNavigate();
   const handleAddJob = () => {
       navigate('/Raid-Meter');
   }
-  
+  */
   useEffect(() => {
     fetch("http://localhost:8082/userData",{
       method:"POST",
@@ -76,44 +97,50 @@ const AddCompany = (props) => {
   }, []);
 
   return (
-    <Card className="input">
-      <form onSubmit={addUserHandler}>
-        <label htmlFor="company">Company Name</label>
+    <div className="input">
+      <form onSubmit={addJobHandler}>
+        <label htmlFor="title">Company Name</label>
         <input
-          id="Company"
+          id="title"
           type="text"
           value={entererdCompany}
-          onChange={usernameChangeHandler}
+          onChange={companyChangeHandler}
         />
-        <label htmlFor="position">Position</label>
+
+        <label htmlFor="role">Position</label>
         <input
-          id="position"
+          id="role"
           type="text"
           value={entererdPosition}
-          onChange={ageChangeHandler}
+          onChange={positionChangeHandler}
         />
-        <label htmlFor="img">Company Logo</label>
+
+        <label htmlFor="image">Company Logo</label>
         <input
-          id="img"
+          id="image"
           type="text"
           value={entererdLogo}
-          onChange={imgChangeHandler}
+          onChange={logoChangeHandler}
         />
+
         <label htmlFor="status">Status</label>
-        <input
-          id="Status"
-          type="text"
+        <select
+          id="status"
           value={entererdStatus}
-          onChange={majorChangeHandler}
-        />
-        <button 
-          type="submit"
-          onClick={handleAddJob}
+          onChange={statusChangeHandler}
         >
-          Add Job
-        </button>
+          <option value="">Select a status</option>
+          <option value="Accepted">Accepted</option>
+          <option value="Rejected">Rejected</option>
+          <option value="In Progress">In Progress</option>
+        </select>
+
+        <div className="addJobButton">
+          <Button type="submit">Add Job</Button>
+        </div>
+
       </form>
-    </Card>
+    </div>
   );
 };
 

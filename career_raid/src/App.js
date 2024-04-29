@@ -7,6 +7,7 @@ import AddCompany from './AddCompany';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 import JobPage from './JobPage';
+import AppPage from './AppPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/Login-Page' exact element={<LoginPage />} />
           <Route path='/Signup-Page' exact element={<SignUpPage />} />
           <Route path='/Raid-Meter' exact element={<JobPage />} />
+          <Route path='/App-Page' exact element={<AppPage />}   /> 
         </Routes>
       </Router>
 

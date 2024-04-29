@@ -50,11 +50,17 @@ function LoginPage() {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data, "userRegister");
-                if(data.status=="ok") {
+                if(data.status==="ok") {
                     alert("login successful");
                     window.localStorage.setItem("token", data.data);
-                    navigate('/Add-Company')
+                    navigate('/App-Page')
                 }
+                else {
+                    alert(data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
             });
 
     }

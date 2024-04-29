@@ -57,9 +57,10 @@ app.post("/login-user", async(req, res) => {
         if(res.status(201)){
             return res.json({status: "ok", data: token});
         }else{
-            return res.json({error: "error"});
+            res.status(401).send({ status: "error", error: "Invalid Password" });
         }
     }
+    
     res.json({status: "error", error: "Invalid Password"});
 });
 
@@ -76,5 +77,44 @@ app.post("userData", async(req,res) => {
         })
     } catch (error) {
 
+    }
+});
+
+require("./jobDetails");
+const Job = mongoose.model("JobInfo")
+app.post('/newJob', async (req, res) => {
+    const { title, role, image, status } = req.body;
+
+    // Create a new job document
+    const job = new Job({
+        title,
+        role,
+        image,
+        status
+    });
+
+    try {
+        // Save the job to the database
+        await Job.create({
+            title,
+            role,
+            image,
+            status
+        });
+        res.status(201).send({ status: 'ok', message: 'Job added successfully' });
+    } catch (error) {
+        res.status(500).send({ status: 'error', error: 'An error occurred while adding the job' });
+    }
+});
+
+app.delete('/jobDelete/:id', async (req, res) => {
+    try {
+        const job = await Job.findByIdAndDelete(req.params.id);
+        if (!job) {
+            return res.status(404).send({ status: 'error', error: 'Job not found' });
+        }
+        res.send({ status: 'ok', message: 'Job deleted successfully' });
+    } catch (error) {
+        res.status(500).send({ status: 'error', error: 'An error occurred while deleting the job' });
     }
 });

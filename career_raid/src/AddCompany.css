@@ -1,27 +1,45 @@
 .input {
-    margin: 2rem auto;
-    padding: 1rem;
-    width: 90%;
-    max-width: 40rem;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-  
-  .input input {
-    font: inherit;
-    display: block;
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 0.15rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .input input:focus {
-    outline: none;
-    border-color: #4f005f;
-  }
-  
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
+  /* Added box-shadow for better visual separation */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 8px; /* Optional: Rounded corners */
+}
+
+
+
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.input input,
+.input select,
+.input button {
+  font: inherit;
+  display: block;
+  width: calc(100% - 0.3rem); /* Subtract padding from width */
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px; /* Optional: Rounded corners */
+}
+
+.input input:focus,
+.input select:focus,
+.input button:focus {
+  outline: none;
+  border-color: #5a5a5a;
+}
+
+.input button {
+  background-color: #21d19f;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px; /* Updated border-radius */
+}
