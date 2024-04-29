@@ -48,7 +48,7 @@ const AddCompany = (props) => {
   };
 
   return (
-    <Card className="input">
+    <div className="input">
       <form onSubmit={addJobHandler}>
         <label htmlFor="title">Company Name</label>
         <input
@@ -91,7 +91,7 @@ const AddCompany = (props) => {
         </div>
 
       </form>
-    </Card>
+    </div>
   );
 };
 
