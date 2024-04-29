@@ -14,12 +14,30 @@ const SignUpPage = () => {
             ...prevState,
             [name]: value
         }));
+
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // You can perform form submission logic here, like sending data to a server
+        const {email, password} = formData;
         console.log('Form Submitted:', formData);
+        fetch("http://localhost:8082/register",{
+            method:"POST",
+            crossDomain:true,
+            headers:{
+                "Content-Type":"application/json",
+                Accept:"application/json",
+                "Access-Control-Allow-Origin":"*",
+            },
+            body:JSON.stringify({
+                email,
+                password
+            }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data, "userRegister");
+            });
     };
     const navigate = useNavigate();
     const handleLogin = () => {
@@ -40,7 +58,9 @@ const SignUpPage = () => {
                         type="password"id="password"name="password"placeholder='Password' value={formData.password}onChange={handleChange}
                     />
                 </div>
-                <button type="submit">Sign Up</button>
+                <button type="submit"
+                    onClick={handleSubmit}
+                >Sign Up</button>
                 <div className='signIn'>
                     <p>Already have an account? <button onClick={handleLogin}>Sign In</button></p>
                     </div>

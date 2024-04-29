@@ -42,7 +42,9 @@
     text-align: center;
     width: 60vw;
     justify-content: end;
-    margin-right: 2rem;
+    margin-right: 0;
+    margin-top: 0;
+
   }
   
   .nav-item {
@@ -59,8 +61,9 @@
   }
   
   .nav-links:hover {
-    border-bottom: 4px solid #fff;
+    border-bottom: 2px solid #fff;
     transition: all 0.2s ease-out;
+    height: auto;
   }
   
   .fa-bars {
@@ -114,6 +117,7 @@
       background-color: #fff;
       color: #242424;
       border-radius: 0;
+
     }
   
     .Taskbar-logo {
@@ -131,6 +135,7 @@
       transform: translate(-100%, 60%);
       font-size: 1.8rem;
       cursor: pointer;
+      color: #fff;
     }
   
     .fa-times {

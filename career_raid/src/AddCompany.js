@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import Card from './Card';
 import Button from './Button';
 import './AddCompany.css';
+import { useNavigate } from 'react-router-dom';
+import { Component } from 'react';
 
 const AddCompany = (props) => {
   const [entererdCompany, setEntererdCompany] = useState('');
@@ -40,14 +42,38 @@ const AddCompany = (props) => {
     };
 
     
-    props.onAddUser(userData);
-
+    
+    console.log(userData);
     
     setEntererdCompany('');
     setentererdPosition('');
     setentererdLogo('');
     setentererdStatus('');
   };
+
+  const navigate = useNavigate();
+  const handleAddJob = () => {
+      navigate('/Raid-Meter');
+  }
+  
+  useEffect(() => {
+    fetch("http://localhost:8082/userData",{
+      method:"POST",
+      crossDomain:true,
+      headers:{
+          "Content-Type":"application/json",
+          Accept:"application/json",
+          "Access-Control-Allow-Origin":"*",
+      },
+      body:JSON.stringify({
+          token:window.localStorage.getItem("token")
+      }),
+  })
+      .then((res) => res.json())
+      .then((data) => {
+          console.log(data, "userData");
+      });
+  }, []);
 
   return (
     <Card className="input">
@@ -80,7 +106,12 @@ const AddCompany = (props) => {
           value={entererdStatus}
           onChange={majorChangeHandler}
         />
-        <Button type="submit">Add Job</Button>
+        <button 
+          type="submit"
+          onClick={handleAddJob}
+        >
+          Add Job
+        </button>
       </form>
     </Card>
   );

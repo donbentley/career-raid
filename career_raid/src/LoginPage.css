@@ -1,107 +1,70 @@
 img {
-    object-fit: cover;
-    width: 400px;
-    height: 400px;
-    position: center;
-    margin: 20px;
-    z-index: -1;
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
+  position: center;
+  margin: 20px;
+  z-index: -1;
 }
 
 
 .loginPage-container{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: insert 0 0 0 1000px rgba(0,0,0,0.2);
-    object-fit: contain;
+  max-width: 25rem;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  
 }
 
 .loginPage-container input {
-    width: 300px;
-    color: #020202;
-    height: 40px;
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 32px;
-    display: block;
+  color: black;
+  font: inherit;
+  border: 1.5px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: rgb(247, 247, 247);
+  border-radius: 10px;
+  width: 91%;
 }
 
 .loginPage-container > h1 {
-    color: #020308;
-    font-size: 100px;
-    font-family: monospace;
-    margin-top: -100px;
+  color: #020308;
+  font-size: 100px;
+  font-family: monospace;
+  margin-top: -100px;
 }
 
 .loginPage-container > p {
-    margin-top: 50px;
-    color: #0c0c0c;
-    font-family: monospace;
-    font-size: 32px;
+  margin-top: 50px;
+  color: #0c0c0c;
+  font-family: monospace;
+  font-size: 32px;
 }
 
 .loginPage-btns {
-    margin-top: 32px;
+  margin-top: 32px;
+}
+.donbutton {
+  padding: 10px;
+  background-color:#242222;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
 }
 
-.loginPage-btns .btn {
-    margin: 6px;
+.donbutton:hover {
+  background-color: gray
 }
 
-.btn {
-  width: auto;
-  background-color: rgb(121, 120, 120); 
-  color: black; 
-  border: 2px solid black; 
-  transition: color 0.5s; 
+.donbutton:active {
+   background-color: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
 }
 
-@media screen and (max-width: 960px) {
-    .loginPage-container > h1 {
-      font-size: 70px;
-      margin-top: -150px;
-    }
-
-    .loginPage-container > p {
-      font-size: 30px;
-    }
-  
-    .btn-mobile {
-      display: block;
-      text-decoration: none;
-    }
-    .btn {
-      width: auto;
-      background-color: rgb(121, 120, 120); 
-      color: black; 
-      border: 2px solid black; 
-      transition: color 0.5s; 
-    }
-  }
-  
-  @media screen and (max-width: 768px) {
-    .loginPage-container > h1 {
-      font-size: 50px;
-      margin-top: -100px;
-    }
-  
-    .loginPage-container > p {
-      font-size: 30px;
-    }
-  
-    .btn-mobile {
-      display: block;
-      text-decoration: none;
-    }
-  
-    .btn {
-      width: auto;
-      background-color: rgb(121, 120, 120); 
-      color: black; 
-      border: 2px solid black; 
-      transition: color 0.5s; 
-    }
-  }
+.logIn a{
+   color: red;
+}
