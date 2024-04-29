@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './SignUpPage.css';
 
 const SignUpPage = () => {
@@ -27,7 +28,7 @@ const SignUpPage = () => {
             <form onSubmit={handleSubmit}>
                 <div className="signup-info">
                     <input
-                        type="username"id="username"name="username" placeholder='Username' value={formData.email} onChange={handleChange}
+                        type="username"id="username"name="username" placeholder='Username' value={formData.username} onChange={handleChange}
                     />
                 </div>
                 <div className="signup-info">
@@ -35,7 +36,9 @@ const SignUpPage = () => {
                         type="password"id="password"name="password"placeholder='Password' value={formData.password}onChange={handleChange}
                     />
                 </div>
-                <button type="submit">Sign Up</button>
+                <Link to="/App-Page">
+                    <button type="submit">Sign Up</button>
+                </Link>
                 <div className='signIn'>
                     <p>Already have an account? <a href="#">Log In</a></p>
                     </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from './Button';
 import './LoginPage.css';
+import { Link } from 'react-router-dom';
+
 
 
 function LoginPage() {
@@ -29,7 +31,9 @@ function LoginPage() {
                 onChange={handlePassword}
                 placeholder="Password"
             />
+            <Link to='/App-Page'>
              <button class="donbutton"type="submit">Log In</button>
+             </Link>
                 <div className='logIn'>
                     <p>Dont have an account already? <a href="#">Sign Up</a></p>
                     </div>
